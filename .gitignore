@@ -4,4 +4,8 @@ __pycache__/
 *.pyc
 staticfiles/
 celerybeat-schedule
+backups/quick_commerce_takeaway_backup.dump
+
+# Database backups
 backups/
+*.dump
