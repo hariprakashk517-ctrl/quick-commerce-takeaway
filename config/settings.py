@@ -192,23 +192,21 @@ CELERY_BEAT_SCHEDULE = {
 
 CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS", "http://localhost:5173").split(",")
 
+# Force Django to treat incoming Nginx requests as HTTPS
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
 USE_X_FORWARDED_HOST = True
 USE_X_FORWARDED_PORT = True
 
-# CSRF & Cookie Security for HTTPS
-# CSRF_COOKIE_SECURE = True
-# SESSION_COOKIE_SECURE = True
+# Explicitly trust both domain variants
+CSRF_TRUSTED_ORIGINS = [
+    'https://qctshop.online',
+    'https://www.qctshop.online',
+]
 
-CSRF_TRUSTED_ORIGINS = os.getenv(
-    "CSRF_TRUSTED_ORIGINS",
-    "https://qctshop.online,https://www.qctshop.online"
-).split(",")
-
+# Ensure cookies are served strictly over HTTPS
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_DOMAIN = None
+CSRF_COOKIE_HTTPONLY = False
 
 LOGGING = {
     'version': 1,
