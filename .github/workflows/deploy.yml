@@ -37,14 +37,14 @@ jobs:
       - name: Verify Missing Django Migrations
         run: python manage.py makemigrations --check --dry-run
         env:
-          SECRET_KEY: 'ci-temporary-secret-key'
+          DJANGO_SECRET_KEY: 'ci-temporary-secret-key'
           DEBUG: 'True'
 
       # Build Verification
       - name: Run Django Unit Tests
         run: python manage.py test || echo "Django tests executed."
         env:
-          SECRET_KEY: 'ci-temporary-secret-key'
+          DJANGO_SECRET_KEY: 'ci-temporary-secret-key'
           DEBUG: 'True'
 
       - name: Install & Build React Frontend
