@@ -1,0 +1,362 @@
+/* =========================
+   Login Page
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+.login-page {
+    min-height: 100vh;
+
+    width: 100%;
+
+    padding: 24px 16px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f7f7f8;
+
+    color: #171717;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* =========================
+   Login Container
+========================= */
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+
+    padding: 32px;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 7px 25px rgba(0, 0, 0, 0.05),
+        0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+
+/* =========================
+   Login Header
+========================= */
+
+.login-container h1 {
+    margin: 0 0 28px;
+
+    color: #171717;
+
+    font-size: 28px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    letter-spacing: -0.6px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   Login Form
+========================= */
+
+.login-container form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 19px;
+}
+
+
+/* =========================
+   Form Fields
+========================= */
+
+.login-container form > div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+/* =========================
+   Labels
+========================= */
+
+.login-container label {
+    color: #555555;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+/* =========================
+   Input
+========================= */
+
+.login-container input {
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #222222;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    outline: none;
+
+    box-shadow: none;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
+}
+
+
+/* Input Focus */
+
+.login-container input:focus {
+    border-color: #5f259f;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(95, 37, 159, 0.10);
+}
+
+
+/* Input Hover */
+
+.login-container input:hover:not(:focus) {
+    border-color: #cfcfcf;
+}
+
+
+/* Placeholder */
+
+.login-container input::placeholder {
+    color: #aaaaaa;
+}
+
+
+/* Input Focus */
+
+/* .login-container input:focus {
+    border-color: #5f259f;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(95, 37, 159, 0.10);
+} */
+
+
+/* Input Hover */
+
+/* .login-container input:hover:not(:focus) {
+    border-color: #cfcfcf;
+} */
+
+
+/* Placeholder */
+
+/* .login-container input::placeholder {
+    color: #aaaaaa; */
+/* } */
+
+
+/* =========================
+   Error Message
+========================= */
+
+.login-container form > p {
+    margin: -5px 0 0;
+
+    padding: 10px 12px;
+
+    border-radius: 11px;
+
+    background: #fff0ef;
+
+    color: #d92d20;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+   Login Button
+========================= */
+
+.login-container button {
+    width: 100%;
+
+    min-height: 48px;
+
+    margin-top: 3px;
+
+    padding: 0 18px;
+
+    border: 0;
+
+    border-radius: 13px;
+
+    background: #5f259f;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(95, 37, 159, 0.22);
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+/* Button Hover */
+
+.login-container button:hover:not(:disabled) {
+    background: #54208d;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 9px 21px rgba(95, 37, 159, 0.28);
+}
+
+
+/* Button Active */
+
+.login-container button:active:not(:disabled) {
+    transform: scale(0.97);
+}
+
+
+/* Button Disabled / Loading */
+
+.login-container button:disabled {
+    background: #9b79b9;
+
+    cursor: not-allowed;
+
+    box-shadow:
+        0 5px 13px rgba(95, 37, 159, 0.12);
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 600px) {
+
+    .login-page {
+        padding: 18px 12px 30px;
+    }
+
+    .login-container {
+        max-width: 100%;
+
+        padding: 27px 20px;
+
+        border-radius: 20px;
+    }
+
+    .login-container h1 {
+        margin-bottom: 24px;
+
+        font-size: 24px;
+    }
+
+    .login-container form {
+        gap: 17px;
+    }
+
+    .login-container input {
+        height: 46px;
+
+        font-size: 13px;
+    }
+
+    .login-container button {
+        min-height: 47px;
+    }
+}
+
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 360px) {
+
+    .login-page {
+        padding: 14px 10px 25px;
+    }
+
+    .login-container {
+        padding: 24px 17px;
+    }
+
+    .login-container h1 {
+        font-size: 23px;
+    }
+}
+
+.login-container input[type="password"]::-ms-reveal {
+    filter: brightness(0);
+    opacity: 0.8;
+
+    cursor: pointer;
+}

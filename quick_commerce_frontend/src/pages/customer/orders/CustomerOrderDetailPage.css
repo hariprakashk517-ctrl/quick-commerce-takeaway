@@ -1,0 +1,726 @@
+/* =========================
+   Order Details Page
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+.order-details-page {
+    min-height: 100vh;
+
+    width: 100%;
+
+    padding: 24px 16px 40px;
+
+    background: #f7f7f8;
+
+    color: #171717;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* =========================
+   Header
+========================= */
+
+.order-details-header {
+    width: 100%;
+    max-width: 720px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.order-back-button {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    color: #222222;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+}
+
+.order-back-button:hover {
+    background: #f0edf2;
+
+    transform: translateX(-2px);
+}
+
+.order-back-button:active {
+    transform: scale(0.94);
+}
+
+.order-details-header h1 {
+    margin: 0;
+
+    color: #171717;
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.6px;
+}
+
+.order-details-header p {
+    margin: 4px 0 0;
+
+    color: #858585;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   Summary Card
+========================= */
+
+.order-summary-card {
+    width: 100%;
+    max-width: 720px;
+
+    margin: 0 auto 16px;
+
+    padding: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 23px;
+
+    box-shadow:
+        0 7px 25px rgba(0, 0, 0, 0.045);
+}
+
+
+/* =========================
+   Summary Top
+========================= */
+
+.order-summary-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-bottom: 17px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.order-detail-label {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #999999;
+
+    font-size: 10px;
+
+    font-weight: 650;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+}
+
+.order-summary-top h2 {
+    margin: 0;
+
+    color: #222222;
+
+    font-size: 18px;
+
+    font-weight: 800;
+}
+
+.order-detail-status {
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: #f4edfb;
+
+    color: #5f259f;
+
+    font-size: 11px;
+
+    font-weight: 750;
+}
+
+
+/* =========================
+   Detail Grid
+========================= */
+
+.order-detail-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+
+    padding: 17px 0;
+}
+
+.order-detail-item {
+    padding: 12px;
+
+    border-radius: 13px;
+
+    background: #fafafa;
+}
+
+.order-detail-item span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #999999;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+.order-detail-item strong {
+    display: block;
+
+    color: #333333;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-transform: capitalize;
+}
+
+
+/* =========================
+   Total
+========================= */
+
+.order-total-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 15px 0;
+
+    border-top: 1px solid #eeeeee;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.order-total-row span {
+    color: #666666;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.order-total-row strong {
+    color: #5f259f;
+
+    font-size: 21px;
+
+    font-weight: 850;
+}
+
+
+/* =========================
+   Dates
+========================= */
+
+.order-dates {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    padding-top: 15px;
+}
+
+.order-dates span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #999999;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+.order-dates strong {
+    color: #555555;
+
+    font-size: 11px;
+
+    font-weight: 650;
+}
+
+
+/* =========================
+   Pickup Credentials
+========================= */
+
+.pickup-credentials-card {
+    width: 100%;
+    max-width: 720px;
+
+    margin: 0 auto 16px;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #faf7fc
+        );
+
+    border: 1px solid #e8dcef;
+
+    border-radius: 21px;
+
+    box-shadow:
+        0 6px 20px rgba(95, 37, 159, 0.07);
+}
+
+.pickup-credentials-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #5f259f;
+
+    color: #ffffff;
+
+    font-size: 25px;
+}
+
+.pickup-credentials-content {
+    flex: 1;
+}
+
+.pickup-credentials-content h2 {
+    margin: 0;
+
+    color: #272727;
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+.pickup-credentials-content p {
+    margin: 4px 0 0;
+
+    color: #888888;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+.pickup-credentials-button {
+    min-height: 42px;
+
+    padding: 0 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    flex-shrink: 0;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    background: #5f259f;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px rgba(95, 37, 159, 0.2);
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.pickup-credentials-button span {
+    font-size: 15px;
+
+    transition:
+        transform 0.15s ease;
+}
+
+.pickup-credentials-button:hover {
+    background: #54208d;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 19px rgba(95, 37, 159, 0.28);
+}
+
+.pickup-credentials-button:hover span {
+    transform: translateX(3px);
+}
+
+.pickup-credentials-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   Items Section
+========================= */
+
+.order-items-section {
+    width: 100%;
+    max-width: 720px;
+
+    margin: 0 auto;
+}
+
+.order-items-header {
+    margin-bottom: 11px;
+}
+
+.order-items-header h2 {
+    margin: 0;
+
+    color: #222222;
+
+    font-size: 18px;
+
+    font-weight: 800;
+}
+
+.order-items-header p {
+    margin: 3px 0 0;
+
+    color: #999999;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   Items List
+========================= */
+
+.order-items-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+
+/* =========================
+   Item Card
+========================= */
+
+.order-item-card {
+    padding: 17px;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 19px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.035);
+
+    transition:
+        transform 0.16s ease,
+        box-shadow 0.16s ease;
+}
+
+.order-item-card:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.055);
+}
+
+
+/* =========================
+   Item Main
+========================= */
+
+.order-item-main {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding-bottom: 14px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.order-item-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #f4edfb;
+
+    font-size: 19px;
+}
+
+.order-item-name h3 {
+    margin: 0;
+
+    color: #292929;
+
+    font-size: 14px;
+
+    font-weight: 750;
+}
+
+.order-item-name span {
+    display: inline-block;
+
+    margin-top: 4px;
+
+    color: #777777;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-transform: capitalize;
+}
+
+
+/* =========================
+   Item Details
+========================= */
+
+.order-item-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    padding-top: 14px;
+}
+
+.order-item-details span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #999999;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+.order-item-details strong {
+    color: #444444;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.order-item-details .item-total {
+    color: #5f259f;
+
+    font-size: 13px;
+}
+
+.order-item-details .verified {
+    color: #168348;
+}
+
+.order-item-details .not-verified {
+    color: #d92d20;
+}
+
+
+/* =========================
+   No Items
+========================= */
+
+.no-items-card {
+    padding: 35px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 20px;
+
+    text-align: center;
+}
+
+.no-items-icon {
+    margin-bottom: 10px;
+
+    font-size: 28px;
+}
+
+.no-items-card p {
+    margin: 0;
+
+    color: #888888;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 600px) {
+
+    .order-details-page {
+        padding: 18px 12px 30px;
+    }
+
+    .order-details-header h1 {
+        font-size: 22px;
+    }
+
+    .order-summary-card {
+        padding: 17px;
+
+        border-radius: 20px;
+    }
+
+    .order-detail-grid {
+        gap: 8px;
+    }
+
+    .order-detail-item {
+        padding: 10px;
+    }
+
+    .order-dates {
+        grid-template-columns: 1fr;
+    }
+
+    .pickup-credentials-card {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+    .pickup-credentials-content {
+        min-width: 0;
+    }
+
+    .pickup-credentials-button {
+        width: 100%;
+    }
+
+    .order-item-card {
+        padding: 15px;
+    }
+
+    .order-item-details {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        row-gap: 13px;
+    }
+}

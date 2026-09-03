@@ -1,0 +1,321 @@
+/* =========================
+   PROFILE PAGE
+========================= */
+
+.profile-page {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 24px 16px 40px;
+
+    background: #f7f7f8;
+
+    color: #171717;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* =========================
+   PROFILE CONTAINER
+========================= */
+
+.profile-container {
+    width: 100%;
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    padding: 28px 22px 24px;
+
+    background: #ffffff;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.06),
+        0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================
+   PROFILE HEADER
+========================= */
+
+.profile-header {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* =========================
+   AVATAR
+========================= */
+
+.profile-avatar {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #5f259f;
+
+    color: #ffffff;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 20px rgba(95, 37, 159, 0.24);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 10px 24px rgba(95, 37, 159, 0.3);
+}
+
+
+/* =========================
+   HEADER TEXT
+========================= */
+
+.profile-header h1 {
+    margin: 0;
+
+    color: #171717;
+
+    font-size: 23px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+.profile-header p {
+    margin: 5px 0 0;
+
+    color: #888888;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+   PROFILE DETAILS
+========================= */
+
+.profile-details {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* =========================
+   PROFILE ROW
+========================= */
+
+.profile-row {
+    min-height: 58px;
+
+    padding: 12px 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border: 1px solid #eeeeef;
+
+    border-radius: 14px;
+
+    background: #fafafa;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.profile-row:hover {
+    background: #faf7fc;
+
+    border-color: #e6d9ed;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.profile-label {
+    color: #888888;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   VALUE
+========================= */
+
+.profile-value {
+    max-width: 65%;
+
+    overflow: hidden;
+
+    color: #333333;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-align: right;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+
+.profile-logout-button {
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ffd6d2;
+
+    border-radius: 15px;
+
+    background: #fff1f0;
+
+    color: #d92d20;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.16s ease,
+        background 0.16s ease,
+        border-color 0.16s ease,
+        box-shadow 0.16s ease;
+}
+
+.profile-logout-button:hover {
+    background: #ffe6e3;
+
+    border-color: #ffc4be;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 16px rgba(217, 45, 32, 0.1);
+}
+
+.profile-logout-button:active {
+    transform: scale(0.97);
+
+    box-shadow: none;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .profile-page {
+        padding: 16px 12px 28px;
+    }
+
+    .profile-container {
+        padding: 23px 16px 20px;
+
+        border-radius: 24px;
+    }
+
+    .profile-header {
+        gap: 12px;
+
+        padding-bottom: 20px;
+    }
+
+    .profile-avatar {
+        width: 52px;
+        height: 52px;
+
+        border-radius: 16px;
+
+        font-size: 21px;
+    }
+
+    .profile-header h1 {
+        font-size: 21px;
+    }
+
+    .profile-row {
+        min-height: 54px;
+
+        padding: 11px 12px;
+    }
+
+    .profile-value {
+        max-width: 60%;
+    }
+
+    .profile-logout-button {
+        height: 50px;
+    }
+}

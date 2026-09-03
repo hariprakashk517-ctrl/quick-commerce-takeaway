@@ -1,0 +1,595 @@
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+.pickup-page {
+    min-height: 100vh;
+    width: 100%;
+    background: #8b8bd2;
+    color: #171717;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    padding: 0 16px 32px;
+}
+
+/* =========================
+   Header
+========================= */
+
+.pickup-header {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 20px 4px 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.pickup-header h1 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+}
+
+.pickup-header span {
+    display: block;
+    margin-top: 3px;
+    font-size: 12px;
+    color: #777;
+    font-weight: 500;
+}
+
+.back-button {
+    width: 42px;
+    height: 42px;
+
+    border: 0;
+    border-radius: 13px;
+
+    background: #ffffff;
+    color: #222;
+
+    font-size: 25px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+
+    transition: all 0.2s ease;
+}
+
+.back-button:hover {
+    transform: translateX(-2px);
+    background: #f0f0f2;
+}
+
+/* =========================
+   Scanner Card
+========================= */
+
+.scanner-card {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+
+    background: #ffffff;
+
+    border-radius: 28px;
+
+    padding: 28px 20px 22px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.06),
+        0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.scanner-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 14px;
+
+    border-radius: 16px;
+
+    background: #5f259f;
+    color: #ffffff;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    box-shadow: 0 8px 20px rgba(95, 37, 159, 0.25);
+}
+
+.scanner-card h2 {
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.scanner-description {
+    max-width: 350px;
+
+    margin: 8px auto 22px;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* =========================
+   QR Scanner
+========================= */
+
+.scanner-wrapper {
+    position: relative;
+
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: #101010;
+}
+
+/* Actual html5-qrcode container */
+
+.qr-reader {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.qr-reader video {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+}
+
+/*
+   Hide some html5-qrcode default UI.
+*/
+
+.qr-reader img {
+    display: none !important;
+}
+
+.qr-reader__scan_region {
+    min-height: 100% !important;
+}
+
+.qr-reader__dashboard {
+    display: none !important;
+}
+
+/* =========================
+   Scanner Placeholder
+========================= */
+
+.scanner-placeholder {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(95, 37, 159, 0.16),
+            transparent 55%
+        ),
+        #171717;
+
+    color: #ffffff;
+
+    pointer-events: none;
+}
+
+.scanner-placeholder p {
+    margin: 18px 0 0;
+
+    color: #cfcfcf;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.qr-frame {
+    position: relative;
+
+    width: 190px;
+    height: 190px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-placeholder-icon {
+    font-size: 60px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+/* QR corners */
+
+.corner {
+    position: absolute;
+
+    width: 32px;
+    height: 32px;
+
+    border-color: #a855f7;
+    border-style: solid;
+}
+
+.corner.top-left {
+    top: 0;
+    left: 0;
+    border-width: 4px 0 0 4px;
+    border-radius: 8px 0 0 0;
+}
+
+.corner.top-right {
+    top: 0;
+    right: 0;
+    border-width: 4px 4px 0 0;
+    border-radius: 0 8px 0 0;
+}
+
+.corner.bottom-left {
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 4px 4px;
+    border-radius: 0 0 0 8px;
+}
+
+.corner.bottom-right {
+    bottom: 0;
+    right: 0;
+    border-width: 0 4px 4px 0;
+    border-radius: 0 0 8px 0;
+}
+
+/* =========================
+   Scanning Animation
+========================= */
+
+.scanner-wrapper.active::after {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border: 2px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 8px;
+
+    pointer-events: none;
+}
+
+.scan-line {
+    position: absolute;
+
+    width: 190px;
+    height: 2px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: #a855f7;
+
+    box-shadow:
+        0 0 8px #a855f7,
+        0 0 18px rgba(168, 85, 247, 0.8);
+
+    animation: scanLine 2s ease-in-out infinite;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+@keyframes scanLine {
+    0% {
+        top: calc(50% - 95px);
+    }
+
+    50% {
+        top: calc(50% + 95px);
+    }
+
+    100% {
+        top: calc(50% - 95px);
+    }
+}
+
+/* =========================
+   Status
+========================= */
+
+.status-message {
+    max-width: 350px;
+
+    margin: 14px auto 0;
+
+    padding: 11px 14px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-message.success {
+    color: #147a42;
+    background: #ecfdf3;
+}
+
+.status-message.error {
+    color: #c62828;
+    background: #fff1f1;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #20a35a;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.scanner-actions {
+    margin-top: 18px;
+}
+
+.scan-button,
+.stop-button {
+    width: 100%;
+
+    height: 52px;
+
+    border: 0;
+    border-radius: 15px;
+
+    font-size: 15px;
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+.scan-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    color: #ffffff;
+
+    background: #5f259f;
+
+    box-shadow: 0 8px 18px rgba(95, 37, 159, 0.24);
+}
+
+.scan-button:hover {
+    background: #54208d;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 10px 22px rgba(95, 37, 159, 0.3);
+}
+
+.scan-button:active {
+    transform: scale(0.98);
+}
+
+.scan-button-icon {
+    font-size: 21px;
+}
+
+.stop-button {
+    color: #d92d20;
+
+    background: #fff0ef;
+
+    border: 1px solid #ffd6d2;
+}
+
+.stop-button:hover {
+    background: #ffe5e2;
+}
+
+/* =========================
+   Tips
+========================= */
+
+.scan-tips {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 22px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eeeeee;
+}
+
+.tip {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+.tip-icon {
+    flex-shrink: 0;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #f4edfb;
+    color: #5f259f;
+
+    font-size: 18px;
+}
+
+.tip strong {
+    display: block;
+
+    margin-top: 1px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.tip p {
+    margin: 3px 0 0;
+
+    color: #888;
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* =========================
+   Footer
+========================= */
+
+.footer-text {
+    width: 100%;
+    max-width: 520px;
+
+    margin: 18px auto 0;
+
+    text-align: center;
+
+    color: #aaa;
+
+    font-size: 11px;
+    font-weight: 500;
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 480px) {
+    .pickup-page {
+        padding: 0 12px 24px;
+    }
+
+    .pickup-header {
+        padding-top: 16px;
+    }
+
+    .scanner-card {
+        padding: 24px 16px 20px;
+        border-radius: 24px;
+    }
+
+    .scanner-card h2 {
+        font-size: 23px;
+    }
+
+    .scanner-wrapper {
+        height: 280px;
+        border-radius: 19px;
+    }
+
+    .qr-frame,
+    .scanner-wrapper.active::after,
+    .scan-line {
+        width: 175px;
+    }
+
+    .qr-frame {
+        height: 175px;
+    }
+
+    .scanner-wrapper.active::after {
+        height: 175px;
+    }
+
+    @keyframes scanLine {
+        0% {
+            top: calc(50% - 87px);
+        }
+
+        50% {
+            top: calc(50% + 87px);
+        }
+
+        100% {
+            top: calc(50% - 87px);
+        }
+    }
+}
