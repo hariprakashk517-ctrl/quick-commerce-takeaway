@@ -72,6 +72,11 @@ jobs:
           name: react-frontend-dist
           path: frontend-dist
 
+      - name: Prepare React Build
+        run: |
+          mkdir -p deploy-frontend
+          cp -r frontend-dist/* deploy-frontend/
+
       # Deploy React Frontend
       - name: Copy React Build to EC2
         uses: appleboy/scp-action@v1.0.0
@@ -80,7 +85,7 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           port: ${{ secrets.EC2_PORT }}
-          source: "frontend-dist/*"
+          source: "deploy-frontend/*"
           target: "/tmp/quick-commerce-frontend"
 
       - name: SSH Deploy to EC2
@@ -91,22 +96,35 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           port: ${{ secrets.EC2_PORT }}
           script: |
+            set -e
+
             cd ~/quick-commerce-takeaway
 
-            # Update backend source
+            echo "Updating backend source..."
             git fetch origin main
             git reset --hard origin/main
 
-            # Update React frontend served by Nginx
+            echo "Checking uploaded React build..."
+            ls -lah /tmp/quick-commerce-frontend
+            test -f /tmp/quick-commerce-frontend/index.html
+
+            echo "Updating React frontend served by Nginx..."
             sudo rm -rf /var/www/quick-commerce/*
             sudo cp -r /tmp/quick-commerce-frontend/* /var/www/quick-commerce/
 
-            # Remove temporary frontend files
+            echo "Verifying React frontend..."
+            test -f /var/www/quick-commerce/index.html
+            ls -lah /var/www/quick-commerce
+            ls -lah /var/www/quick-commerce/assets/
+
+            echo "Removing temporary frontend files..."
             rm -rf /tmp/quick-commerce-frontend
 
-            # Rebuild backend Docker containers
+            echo "Rebuilding backend Docker containers..."
             docker-compose -f docker-compose.prod.yml down
             docker-compose -f docker-compose.prod.yml up -d --build
 
-            # Remove unused Docker images
+            echo "Removing unused Docker images..."
             docker image prune -f
+
+            echo "Deployment completed successfully."
