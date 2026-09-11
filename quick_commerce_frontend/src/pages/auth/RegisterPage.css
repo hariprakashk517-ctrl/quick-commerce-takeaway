@@ -1,0 +1,246 @@
+/* =========================
+   Register Page
+========================= */
+
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  background-color: #f4f6f8;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   Register Container
+========================= */
+
+.register-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 35px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   Title
+========================= */
+
+.register-title {
+  margin: 0 0 25px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: #222222;
+}
+
+
+/* =========================
+   Error Message
+========================= */
+
+#register-error {
+  margin: 0 0 18px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background-color: #ffe5e5;
+  color: #d00000;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+/* =========================
+   Form
+========================= */
+
+#register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+/* =========================
+   Form Groups
+========================= */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+/* =========================
+   Labels
+========================= */
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+}
+
+
+/* =========================
+   Inputs
+========================= */
+
+.form-group input {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  background-color: #ffffff;
+  color: #222222;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* Input focus */
+
+.form-group input:focus {
+  outline: none;
+  border-color: #5f259f;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+
+/* Placeholder */
+
+.form-group input::placeholder {
+  color: #9ca3af;
+}
+
+
+/* =========================
+   Register Button
+========================= */
+
+#register-button {
+  width: 100%;
+  margin-top: 5px;
+  padding: 12px;
+  border: none;
+  border-radius: 7px;
+  background-color: #5f259f;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+
+/* Button hover */
+
+#register-button:hover {
+  background-color: #54208d;
+}
+
+
+/* Button active */
+
+#register-button:active {
+  transform: translateY(1px);
+}
+
+
+/* =========================
+   Login Link
+========================= */
+
+#login-link {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 14px;
+  /* color: #555555; */
+}
+
+
+#login-link a {
+  color: #5f259f;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
+#login-link a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Default Browser Password Eye
+========================= */
+
+.form-group input[type="password"]::-ms-reveal {
+  filter: brightness(0);
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#register-success {
+  margin: 0 0 18px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background-color: #e6f7ed;
+  color: #16803c;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* =========================
+   Password Match
+========================= */
+
+.password-match {
+  margin: 2px 0 0;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.password-match.success {
+  color: #16803c;
+}
+
+.password-match.error {
+  color: #d92d20;
+}
+
+/* =========================
+   Mobile Responsive
+========================= */
+
+@media (max-width: 480px) {
+
+  .register-page {
+    padding: 20px 15px;
+  }
+
+  .register-container {
+    padding: 25px 20px;
+  }
+
+  .register-title {
+    font-size: 24px;
+  }
+
+  .form-group input {
+    padding: 11px 12px;
+  }
+
+  #register-button {
+    padding: 11px;
+  }
+}

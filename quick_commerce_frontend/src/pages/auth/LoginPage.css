@@ -294,6 +294,30 @@
         0 5px 13px rgba(95, 37, 159, 0.12);
 }
 
+#register-link {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 14px;
+  color: #555555;
+}
+
+#register-link a {
+    color: #5f259f;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#register-link a:hover {
+  text-decoration: underline;
+}
+
+.login-container input[type="password"]::-ms-reveal {
+    filter: brightness(0);
+    opacity: 0.8;
+
+    cursor: pointer;
+}
+
 
 /* =========================
    Mobile
@@ -352,11 +376,4 @@
     .login-container h1 {
         font-size: 23px;
     }
-}
-
-.login-container input[type="password"]::-ms-reveal {
-    filter: brightness(0);
-    opacity: 0.8;
-
-    cursor: pointer;
 }

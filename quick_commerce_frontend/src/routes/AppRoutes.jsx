@@ -33,12 +33,14 @@ import ProfilePage from "../pages/profile/ProfilePage";
 import PaymentSummaryPage from "../pages/takeaway/PaymentSummaryPage";
 import VerifyPickupOTPPage from "../pages/takeaway/VerifyPickupOTPPage";
 import CompletePickupPage from "../pages/takeaway/CompletePickupPage";
+import RegisterPage from "../pages/auth/RegisterPage";
 
 function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
 
         <Route
           path="/customer"

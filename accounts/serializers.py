@@ -16,13 +16,13 @@ class RegisterSerializer(serializers.ModelSerializer):
             "email",
             "phone_number",
             "full_name",
-            "role",
+            # "role",
             "password",
         ]
 
     def create(self, validated_data):
         password = validated_data.pop("password")
-        user = User(**validated_data)
+        user = User(**validated_data,role="CUSTOMER",)
         user.set_password(password)
         user.save()
 

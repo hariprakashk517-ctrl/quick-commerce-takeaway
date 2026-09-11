@@ -3,7 +3,7 @@ import axios from "axios";
 const axiosInstance = axios.create({
   // baseURL: "http://127.0.0.1:8000/api",
   // baseURL: "http://ec2-13-203-67-229.ap-south-1.compute.amazonaws.com/api",
-  baseURL: "https://qctshop.online/api",
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./LoginPage.css";
 import { loginUser } from "../../services/authService";
 import { useAuth } from "../../context/AuthContext";
@@ -104,6 +104,10 @@ function LoginPage() {
                 <button type="submit" disabled={isLoading}>
                     {isLoading ? "Logging in..." : "Login"}
                 </button>
+
+                <div className="register-link" id="register-link">
+                  New user? <Link to="/register">Register</Link>
+                </div>
             </form>
         </div>
     </div>
