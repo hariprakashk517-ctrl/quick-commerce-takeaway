@@ -48,6 +48,8 @@ jobs:
           DEBUG: 'True'
 
       - name: Install & Build React Frontend
+        env:
+        VITE_API_BASE_URL: https://qctshop.online/api
         run: |
           cd quick_commerce_frontend
           npm ci
