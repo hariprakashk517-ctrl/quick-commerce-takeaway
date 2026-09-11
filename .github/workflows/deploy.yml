@@ -72,11 +72,6 @@ jobs:
           name: react-frontend-dist
           path: frontend-dist
 
-      - name: Prepare React Build
-        run: |
-          mkdir -p deploy-frontend
-          cp -r frontend-dist/* deploy-frontend/
-
       # Deploy React Frontend
       - name: Copy React Build to EC2
         uses: appleboy/scp-action@v1.0.0
@@ -85,8 +80,9 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           port: ${{ secrets.EC2_PORT }}
-          source: "deploy-frontend/*"
+          source: "frontend-dist/*"
           target: "/tmp/quick-commerce-frontend"
+          strip_components: 1
 
       - name: SSH Deploy to EC2
         uses: appleboy/ssh-action@v1.0.3
