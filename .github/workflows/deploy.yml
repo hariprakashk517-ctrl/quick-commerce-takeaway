@@ -57,7 +57,7 @@ jobs:
 
       # Save React build for deployment job
       - name: Upload React Build Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: react-frontend-dist
           path: quick_commerce_frontend/dist
@@ -69,7 +69,7 @@ jobs:
 
     steps:
       - name: Download React Build Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: react-frontend-dist
           path: frontend-dist
