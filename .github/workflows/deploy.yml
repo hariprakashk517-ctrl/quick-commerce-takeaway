@@ -69,7 +69,7 @@ jobs:
 
     steps:
       - name: Download React Build Artifact
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: react-frontend-dist
           path: frontend-dist
