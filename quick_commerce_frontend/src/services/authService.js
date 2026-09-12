@@ -5,6 +5,7 @@ export async function loginUser(credentials) {
   return response.data.data;
 }
 
-export function registerUser(userData) {
-  return axiosInstance.post("/auth/register/", userData);
+export async function registerUser(userData) {
+  const response = await axiosInstance.post("/auth/register/", userData);
+  return response.data;
 }
